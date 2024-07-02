@@ -357,7 +357,7 @@ void IRAM_ATTR ESP32RMTController::tx_start()
     RMT.int_ena.val &= ~(1 << (mRMT_channel * 3));
     RMT.int_ena.val |= (1 << (mRMT_channel * 3));
     // rmt_ll_tx_start(&RMT, mRMT_channel)
-    RMT.conf_ch[mRMT_channel].conf1.tx_start = 1;
+    RMT.conf_ch[mRMT_channel].conf1.tx_start_chn = 1;
 	#elif CONFIG_IDF_TARGET_ESP32
     // rmt_ll_tx_reset_pointer(&RMT, mRMT_channel)
     RMT.conf_ch[mRMT_channel].conf1.mem_rd_rst = 1;
